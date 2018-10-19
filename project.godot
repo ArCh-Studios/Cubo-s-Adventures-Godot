@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Cubo-s-Adventures-godot"
+config/name="Cubo-s-Adventures-Godot"
 run/main_scene="res://Stages/Stage1.tscn"
 config/icon="res://icon.png"
 
