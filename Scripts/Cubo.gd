@@ -1,41 +1,41 @@
-extends RigidBody2D
+extends KinematicBody2D
 
-export (float) var speed
-export (float) var jump
-var move_horizontal = 0
-var x_force = 0
-var move_up = false
-var touch_floor = true
-var touch_wall = false
-var face_right = true
-var flip = false
+export (int) var speed
+export (int) var jump_power
+export (int) var gravity
+var horizontal_input = int(0)
+var is_jumping = bool(false)
+var force = Vector2(0, 0)
+
+func _ready():
+	pass
 
 func _process(delta):
-	if Input.is_action_pressed("ui_right"):
-		move_horizontal = 1
-	if Input.is_action_pressed("ui_left"):
-		move_horizontal = -1
-	if move_horizontal < 0:
-		flip = true
-	elif move_horizontal > 0:
-		flip = false
-	$Sprite.flip_h = flip
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+	if (Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A)):
+		horizontal_input = speed
+		$Sprite.flip_h = false
+	elif (Input.is_key_pressed(KEY_A) and !Input.is_key_pressed(KEY_D)):
+		horizontal_input = -speed
+		$Sprite.flip_h = true
+	else:
+		horizontal_input = 0
+	if (Input.is_key_pressed(KEY_W)):
+		is_jumping = true
+	else:
+		is_jumping = false
 
 func _physics_process(delta):
-	x_force += move_horizontal
-	x_force *= .9
-	if move_up:
-		if touch_floor:
-			touch_floor = false
-			linear_velocity = Vector2(x_force, jump)
-		elif touch_wall:
-			touch_wall = false
-			linear_velocity = Vector2(x_force, jump * 2 / 3)
-			if x_force < 0:
-				x_force = jump / 3
-			else:
-				x_force = jump / -3
-	linear_velocity = Vector2(x_force * speed, linear_velocity.y)
-
+	force.x += horizontal_input
+	force.x *= .8
+	if is_on_floor():
+		force.y = 0
+		if is_jumping:
+			force.y = -jump_power
+	else:
+		force.y += gravity
+	if is_on_wall() and is_jumping:
+		if force.x > 0:
+			force = Vector2(-jump_power*2/3, -jump_power*3/4)
+		else:
+			force = Vector2(jump_power*2/3, -jump_power*3/4)
+	move_and_slide(force * delta, Vector2(0, -1))
