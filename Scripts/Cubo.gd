@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal toggle_menu
+
 export (int) var speed
 export (int) var jump_power
 export (int) var gravity
@@ -23,6 +25,8 @@ func _process(delta):
 		is_jumping = true
 	else:
 		is_jumping = false
+	if (Input.is_key_pressed(KEY_ESCAPE)):
+		emit_signal("toggle_menu")
 
 func _physics_process(delta):
 	force.x += horizontal_input

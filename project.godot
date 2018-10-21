@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Cubo-s-Adventures-Godot"
-run/main_scene="res://Stages/Stage1.tscn"
+run/main_scene="res://Menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]

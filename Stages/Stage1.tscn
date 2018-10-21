@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Stage1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Map/map.res" type="TileSet" id=3]
 [ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/InGameMenu.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -12,7 +13,7 @@ script/source = "extends Area2D
 func _ready():
 	connect(\"_on_Goal_body_entered\", get_node(\"/root/Stage1\"), \"_on_Goal_body_entered\")"
 
-[node name="Stage1" type="Node" index="0"]
+[node name="Stage1" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -49,6 +50,13 @@ __meta__ = {
 
 position = Vector2( 190, 1020 )
 
+[node name="InGameMenu" parent="." index="3" instance=ExtResource( 5 )]
+
+visible = false
+_sections_unfolded = [ "Margin", "Pause", "Theme", "Visibility" ]
+
 [connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]
+
+[connection signal="toggle_menu" from="Cubo" to="." method="_on_Cubo_toggle_menu"]
 
 
