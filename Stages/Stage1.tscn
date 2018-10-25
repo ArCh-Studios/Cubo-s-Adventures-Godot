@@ -26,7 +26,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 default_font = SubResource( 2 )
 
-[node name="Stage1" type="Node" index="0"]
+[node name="Stage1" type="Node"]
 
 script = ExtResource( 1 )
 
