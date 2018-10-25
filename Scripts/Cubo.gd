@@ -43,6 +43,3 @@ func _physics_process(delta):
 		else:
 			force = Vector2(jump_power*2/3, -jump_power*3/4)
 	move_and_slide(force * delta, Vector2(0, -1))
-
-func on_body_enter():
-	get_tree().change_scene("res://path/to/scene.tscn")
