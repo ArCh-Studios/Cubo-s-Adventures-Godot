@@ -31,6 +31,8 @@ func _process(delta):
 func _physics_process(delta):
 	force.x += horizontal_input
 	force.x *= .8
+	if is_on_ceiling():
+		force.y = 0
 	if is_on_floor():
 		force.y = 0
 		if is_jumping:
