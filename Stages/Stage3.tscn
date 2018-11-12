@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Stages/Stage3.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Stage3.gd" type="Script" id=1]
 [ext_resource path="res://Map/MapMetal.res" type="TileSet" id=2]
 [ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Menu/InGameMenu.tscn" type="PackedScene" id=5]
+
 
 [node name="Stage3" type="Node"]
 
