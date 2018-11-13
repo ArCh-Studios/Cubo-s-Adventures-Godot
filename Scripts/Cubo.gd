@@ -10,7 +10,7 @@ var is_jumping = bool(false)
 var force = Vector2(0, 0)
 
 func _ready():
-	pass
+	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
 
 func _process(delta):
 	if (Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A)):

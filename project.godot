@@ -18,9 +18,11 @@ config/icon="res://icon.png"
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
+window/size/test_width=800
+window/size/test_height=450
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+window/stretch/shrink="1"
 
 [input]
 

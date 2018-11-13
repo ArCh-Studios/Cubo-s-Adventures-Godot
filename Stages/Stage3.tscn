@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Stage3.gd" type="Script" id=1]
-[ext_resource path="res://Map/MapMetal.res" type="TileSet" id=2]
-[ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Menu/InGameMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Map/MapMetal.res" type="TileSet" id=1]
+[ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/InGameMenu.tscn" type="PackedScene" id=4]
 
-
-[node name="Stage3" type="Node"]
-
-script = ExtResource( 1 )
+[node name="Stage3" type="Node" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 40, 40 )
 cell_quadrant_size = 1
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -32,18 +28,16 @@ format = 1
 tile_data = PoolIntArray( 0, 6, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 16, 3, 0, 17, 3, 0, 18, 3, 0, 19, 3, 0, 20, 3, 0, 21, 3, 0, 22, 3, 0, 23, 3, 0, 24, 3, 0, 25, 3, 0, 26, 3, 0, 27, 3, 0, 28, 3, 0, 29, 3, 0, 30, 3, 0, 31, 3, 0, 32, 3, 0, 33, 3, 0, 34, 3, 0, 35, 3, 0, 36, 3, 0, 37, 3, 0, 38, 3, 0, 39, 3, 0, 40, 3, 0, 41, 3, 0, 42, 3, 0, 43, 3, 0, 44, 3, 0, 45, 3, 0, 46, 3, 0, 47, 7, 0, 65536, 2, 0, 65583, 4, 0, 131072, 2, 0, 131119, 4, 0, 196608, 2, 0, 196655, 4, 0, 262144, 2, 0, 262191, 4, 0, 327680, 2, 0, 327727, 4, 0, 393216, 2, 0, 393263, 4, 0, 458752, 2, 0, 458799, 4, 0, 524288, 2, 0, 524335, 4, 0, 589824, 2, 0, 589871, 4, 0, 655360, 2, 0, 655407, 4, 0, 720896, 2, 0, 720943, 4, 0, 786432, 2, 0, 786479, 4, 0, 851968, 2, 0, 852015, 4, 0, 917504, 2, 0, 917551, 4, 0, 983040, 2, 0, 983087, 4, 0, 1048576, 2, 0, 1048623, 4, 0, 1114112, 2, 0, 1114159, 4, 0, 1179648, 2, 0, 1179695, 4, 0, 1245184, 2, 0, 1245231, 4, 0, 1310720, 2, 0, 1310767, 4, 0, 1376256, 2, 0, 1376303, 4, 0, 1441792, 2, 0, 1441839, 4, 0, 1507328, 2, 0, 1507375, 4, 0, 1572864, 2, 0, 1572911, 4, 0, 1638400, 2, 0, 1638447, 4, 0, 1703936, 5, 0, 1703937, 1, 0, 1703938, 1, 0, 1703939, 1, 0, 1703940, 1, 0, 1703941, 1, 0, 1703942, 1, 0, 1703943, 1, 0, 1703944, 1, 0, 1703945, 1, 0, 1703946, 1, 0, 1703947, 1, 0, 1703948, 1, 0, 1703949, 1, 0, 1703950, 1, 0, 1703951, 1, 0, 1703952, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1703959, 1, 0, 1703960, 1, 0, 1703961, 1, 0, 1703962, 1, 0, 1703963, 1, 0, 1703964, 1, 0, 1703965, 1, 0, 1703966, 1, 0, 1703967, 1, 0, 1703968, 1, 0, 1703969, 1, 0, 1703970, 1, 0, 1703971, 1, 0, 1703972, 1, 0, 1703973, 1, 0, 1703974, 1, 0, 1703975, 1, 0, 1703976, 1, 0, 1703977, 1, 0, 1703978, 1, 0, 1703979, 1, 0, 1703980, 1, 0, 1703981, 1, 0, 1703982, 1, 0, 1703983, 8, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="Goal" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Goal" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 1760, 1020 )
 
-[node name="Cubo" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Cubo" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 160, 1020 )
 
-[node name="InGameMenu" parent="." index="3" instance=ExtResource( 5 )]
+[node name="InGameMenu" parent="." index="3" instance=ExtResource( 4 )]
 
 visible = false
-
-[connection signal="toggle_menu" from="Cubo" to="." method="_on_Cubo_toggle_menu"]
 
 
