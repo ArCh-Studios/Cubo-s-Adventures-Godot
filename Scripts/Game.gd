@@ -12,6 +12,7 @@ func _ready():
 	stage = packed_stage.instance()
 	add_child(stage)
 	move_child(stage, 0)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_Goal_body_entered(body):
 	if body.is_in_group("Cubo"):
