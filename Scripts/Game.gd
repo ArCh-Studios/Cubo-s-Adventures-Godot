@@ -1,11 +1,14 @@
 extends Node
 
-var stage_num = 1
+var save_data
+var current_stage
 var packed_stage
 var stage
 
 func _ready():
-	packed_stage = load("res://Stages/Stage1.tscn")
+	load_game()
+	current_stage = save_data["max_stage"]
+	packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 	stage = packed_stage.instance()
 	add_child(stage)
 	move_child(stage, 0)
@@ -13,14 +16,30 @@ func _ready():
 func _on_Goal_body_entered(body):
 	if body.is_in_group("Cubo"):
 		stage.queue_free()
-		stage_num = stage_num + 1
-		packed_stage = load("res://Stages/Stage" + str(stage_num) + ".tscn")
+		current_stage += 1
+		if current_stage > save_data["max_stage"]:
+			save_data["max_stage"] = current_stage
+			save_game()
+		packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 		stage = packed_stage.instance()
 		add_child(stage)
 		move_child(stage, 0)
-		
 
 func _on_Cubo_toggle_menu():
 	$InGameMenu.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
+	
+func save_game():
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	save_game.store_line(to_json(save_data))
+	save_game.close()
+
+func load_game():
+	var save_file = File.new()
+	if not save_file.file_exists("user://savegame.save"):
+		save_game()
+	save_file.open("user://savegame.save", File.READ)
+	save_data = parse_json(save_file.get_as_text())
+	save_file.close()
