@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Map/MapMetal.res" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menu/InGameMenu.tscn" type="PackedScene" id=4]
 
-[node name="Stage3" type="Node" index="0"]
+[node name="Stage3" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -35,9 +34,5 @@ position = Vector2( 1760, 1020 )
 [node name="Cubo" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 160, 1020 )
-
-[node name="InGameMenu" parent="." index="3" instance=ExtResource( 4 )]
-
-visible = false
 
 
