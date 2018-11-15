@@ -29,6 +29,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Goal" parent="." index="1" instance=ExtResource( 2 )]
 
+visible = false
 position = Vector2( 1760, 1020 )
 
 [node name="Cubo" parent="." index="2" instance=ExtResource( 3 )]
