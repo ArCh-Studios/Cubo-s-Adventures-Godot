@@ -26,7 +26,7 @@ func _process(delta):
 	else:
 		is_jumping = false
 	if (Input.is_key_pressed(KEY_ESCAPE)):
-		emit_signal("toggle_menu")
+		emit_signal("toggle_menu", $Camera2D.get_camera_screen_center())
 
 func _physics_process(delta):
 	force.x += horizontal_input

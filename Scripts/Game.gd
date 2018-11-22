@@ -23,10 +23,15 @@ func _on_Goal_body_entered(body):
 			save_game()
 		packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 		stage = packed_stage.instance()
+		stage.name = "Stage"
 		add_child(stage)
 		move_child(stage, 0)
 
-func _on_Cubo_toggle_menu():
+func _on_Cubo_toggle_menu(camera):
+	$InGameMenu.margin_left = camera.x - 260
+	$InGameMenu.margin_right = camera.x + 260
+	$InGameMenu.margin_top = camera.y - 450
+	$InGameMenu.margin_bottom = camera.y + 450
 	$InGameMenu.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
