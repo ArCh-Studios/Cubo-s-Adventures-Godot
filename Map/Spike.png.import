@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spike.png-56d45d47d53181443ed2c7a5e735de36.stex"
+path="res://.import/Spike.png-046af0c66605fb679259fbe3b574222f.stex"
 
 [deps]
 
-source_file="res://Sprites/spike.png"
-dest_files=[ "res://.import/spike.png-56d45d47d53181443ed2c7a5e735de36.stex" ]
+source_file="res://Map/Spike.png"
+dest_files=[ "res://.import/Spike.png-046af0c66605fb679259fbe3b574222f.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

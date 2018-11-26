@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Cubo-s-Adventures-Godot"
+config/name="Cubo's Adventure's"
 run/main_scene="res://Menu/Menu.tscn"
 config/icon="res://icon.png"
 

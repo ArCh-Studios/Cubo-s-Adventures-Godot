@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Map/WallMetal.png" type="Texture" id=1]
+[ext_resource path="res://Map/Spike.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 20, 20 )
@@ -908,5 +914,102 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SLJoint4/StaticBody2D" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="Spike1" type="Sprite" parent="." index="36"]
+
+position = Vector2( 20, 660 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Spike1" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike1/Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Spike2" type="Sprite" parent="." index="37"]
+
+position = Vector2( 100, 660 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+flip_h = true
+_sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Spike2" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2/Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Spike3" type="Sprite" parent="." index="38"]
+
+position = Vector2( 180, 660 )
+texture = ExtResource( 2 )
+flip_h = true
+flip_v = true
+_sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Spike3" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike3/Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Spike4" type="Sprite" parent="." index="39"]
+
+position = Vector2( 260, 660 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+flip_v = true
+_sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Spike4" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike4/Area2D" index="0"]
+
+shape = SubResource( 2 )
 
 

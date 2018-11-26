@@ -4,7 +4,7 @@
 [ext_resource path="res://Menu/InGameMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Music/Clink Clank.wav" type="AudioStream" id=3]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -17,7 +17,7 @@ visible = false
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Music"
 
