@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 signal toggle_menu
-signal hit_floor(pos)
+signal hit_floor
 
 export (int) var speed
 export (int) var jump_power

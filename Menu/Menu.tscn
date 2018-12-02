@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/FORCED SQUARE.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Menu/ContinueButton.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Menu/NewGameButton.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Menu/ExitButton.gd" type="Script" id=5]
+[ext_resource path="res://Music/Menu.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -25,7 +26,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Menu" type="Node"]
+[node name="Menu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -203,5 +204,14 @@ flat = false
 align = 1
 script = ExtResource( 5 )
 _sections_unfolded = [ "Margin" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Music"
 
 
