@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 20, 20 )
 
-[node name="Cubo" type="KinematicBody2D" index="0" groups=[
+[node name="Cubo" type="KinematicBody2D" groups=[
 "Cubo",
 ]]
 
@@ -18,6 +18,10 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+cam_right_lim = 1920
+cam_left_lim = 0
+cam_up_lim = 0
+cam_down_lim = 1080
 speed = 9000
 jump_power = 70000
 gravity = 4000

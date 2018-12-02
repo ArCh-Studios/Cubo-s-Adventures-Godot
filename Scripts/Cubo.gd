@@ -1,8 +1,12 @@
 extends KinematicBody2D
 
 signal toggle_menu
-signal hit_floor
+signal hit
 
+export (int) var cam_right_lim = 1920
+export (int) var cam_left_lim = 0
+export (int) var cam_top_lim = 0
+export (int) var cam_bottom_lim = 1080
 export (int) var speed
 export (int) var jump_power
 export (int) var gravity
@@ -12,7 +16,11 @@ var force = Vector2(0, 0)
 
 func _ready():
 	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
-	connect("hit_floor", get_tree().get_root().get_node("Game"), "_on_Cubo_collided")
+	connect("hit", get_tree().get_root().get_node("Game/Stage"), "_on_Cubo_collided")
+	$Camera2D.limit_right = cam_right_lim
+	$Camera2D.limit_left = cam_left_lim
+	$Camera2D.limit_top = cam_top_lim
+	$Camera2D.limit_bottom = cam_bottom_lim
 
 func _process(delta):
 	if (Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A)):
@@ -49,4 +57,4 @@ func _physics_process(delta):
 	move_and_slide(force * delta, Vector2(0, -1))
 	if is_on_floor():
 		for i in range(get_slide_count()):
-			emit_signal("hit_floor", get_slide_collision(i).position)
+			emit_signal("hit", position)
