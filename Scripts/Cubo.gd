@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 signal toggle_menu
-signal hit
 
 export (int) var cam_right_lim = 1920
 export (int) var cam_left_lim = 0
@@ -16,7 +15,6 @@ var force = Vector2(0, 0)
 
 func _ready():
 	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
-	connect("hit", get_tree().get_root().get_node("Game/Stage"), "_on_Cubo_collided")
 	$Camera2D.limit_right = cam_right_lim
 	$Camera2D.limit_left = cam_left_lim
 	$Camera2D.limit_top = cam_top_lim
