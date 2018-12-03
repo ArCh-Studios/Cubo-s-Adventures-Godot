@@ -934,6 +934,9 @@ shape = SubResource( 1 )
 
 position = Vector2( 20, 660 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="SpikeUp" index="0"]
 
