@@ -55,6 +55,3 @@ func _physics_process(delta):
 		else:
 			force = Vector2(jump_power*2/3, -jump_power*3/4)
 	move_and_slide(force * delta, Vector2(0, -1))
-	if is_on_floor():
-		for i in range(get_slide_count()):
-			emit_signal("hit", position)
