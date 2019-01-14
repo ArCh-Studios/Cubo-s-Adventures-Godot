@@ -12,18 +12,20 @@ extents = Vector2( 16, 16 )
 "Cubo",
 ]]
 
+position = Vector2( -1, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 cam_right_lim = 1920
 cam_left_lim = 0
 cam_top_lim = 0
 cam_bottom_lim = 1080
-speed = null
-jump_power = null
-gravity = null
+speed = 10000
+jump_power = 70000
+gravity = 5000
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -32,6 +34,7 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
