@@ -1,11 +1,14 @@
 extends Button
 
-signal toggle_main_menu
+signal check_game
+signal toggle_menu
 
 func _ready():
-	connect("toggle_main_menu", get_tree().get_root().get_node("Menu"), "_toggle_main_menu")
+	connect("check_game", get_tree().get_root().get_node("Menu"), "check_game")
+	connect("toggle_menu", get_tree().get_root().get_node("Menu"), "_toggle_menu")
 
 func _pressed():
 	var dir = Directory.new()
 	dir.remove("user://savegame.save")
-	emit_signal("toggle_main_menu")
+	emit_signal("check_game")
+	emit_signal("toggle_menu", "res://Menu/MainMenu.tscn")

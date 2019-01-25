@@ -3,7 +3,7 @@ extends Node
 signal restart
 
 func _ready():
-	connect("restart", get_tree().get_root().get_node("Game"), "_on_Scene_restart")
+	connect("restart", get_tree().get_root().get_node("Game"), "_restart")
 
 func _physics_process(delta):
 	if $Cubo.is_on_floor():

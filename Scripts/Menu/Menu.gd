@@ -5,13 +5,33 @@ var current_menu
 var queue_load
 
 func _ready():
+	check_game()
 	queue_load = false
 	packed_menu = load("res://Menu/MainMenu.tscn")
 	current_menu = packed_menu.instance()
 	current_menu.name = "CurrentMenu"
 	add_child(current_menu, 1)
 	move_child(current_menu, 0)
-	
+
+func check_game():
+	var save_file = File.new()
+	if not save_file.file_exists("user://savegame.save"):
+		ProjectSettings.set("new_game", true)
+	else:
+		ProjectSettings.set("new_game", false)
+	save_file.close()
+
+func load_game():
+	var save_data
+	var save_file = File.new()
+	if not save_file.file_exists("user://savegame.save"):
+		new_save()
+	save_file.open("user://savegame.save", File.READ)
+	save_data = parse_json(save_file.get_as_text())
+	save_file.close()
+	ProjectSettings.set("max_stage", save_data["max_stage"])
+	ProjectSettings.set("current_stage", save_data["max_stage"])
+
 func _process(delta):
 	if queue_load:
 		queue_load = false
@@ -20,17 +40,7 @@ func _process(delta):
 		add_child(current_menu, 1)
 		move_child(current_menu, 0)
 
-func _toggle_main_menu():
+func _toggle_menu(path):
 	current_menu.queue_free()
-	packed_menu = load("res://Menu/MainMenu.tscn")
-	queue_load = true
-
-func _toggle_level_select_menu():
-	current_menu.queue_free()
-	packed_menu = load("res://Menu/LevelSelectMenu.tscn")
-	queue_load = true
-	
-func _toggle_options_menu():
-	current_menu.queue_free()
-	packed_menu = load("res://Menu/OptionsMenu.tscn")
+	packed_menu = load(path)
 	queue_load = true

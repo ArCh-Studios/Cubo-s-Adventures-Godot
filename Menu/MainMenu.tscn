@@ -6,7 +6,7 @@
 [ext_resource path="res://Scripts/Menu/NewGameButton.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Menu/LevelSelectButton.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Menu/OptionsButton.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/Menu/ExitButton.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Menu/QuitButton.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 

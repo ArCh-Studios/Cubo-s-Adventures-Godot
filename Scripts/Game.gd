@@ -1,6 +1,5 @@
 extends Node
 
-var save_data
 var current_stage
 var packed_stage
 var stage
@@ -8,8 +7,7 @@ var queue_load
 
 func _ready():
 	queue_load = false
-	load_game()
-	current_stage = save_data["max_stage"]
+	current_stage = ProjectSettings.get("current_stage")
 	packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 	stage = packed_stage.instance()
 	stage.name = "Stage"
@@ -25,25 +23,7 @@ func _process(delta):
 		add_child(stage, 1)
 		move_child(stage, 0)
 
-func save_game():
-	var save_game = File.new()
-	save_game.open("user://savegame.save", File.WRITE)
-	save_game.store_line(to_json(save_data))
-	save_game.close()
-
-func load_game():
-	var save_file = File.new()
-	if not save_file.file_exists("user://savegame.save"):
-		save_game()
-	save_file.open("user://savegame.save", File.READ)
-	save_data = parse_json(save_file.get_as_text())
-	save_file.close()
-
-func _on_menu_restart():
-	stage.queue_free()
-	queue_load = true
-
-func _on_Scene_restart():
+func _restart():
 	stage.queue_free()
 	queue_load = true
 
@@ -59,9 +39,9 @@ func _on_Cubo_toggle_menu(camera):
 func _on_Goal_body_entered(body):
 	if body.is_in_group("Cubo"):
 		current_stage += 1
+		ProjectSettings.set("current_stage", current_stage)
 		stage.queue_free()
-		if current_stage > save_data["max_stage"]:
-			save_data["max_stage"] = current_stage
-			save_game()
+		if current_stage > ProjectSettings.get("max_stage"):
+			ProjectSettings.set("max_stage", current_stage)
 		packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 		queue_load = true

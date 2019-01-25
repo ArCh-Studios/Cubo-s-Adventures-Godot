@@ -1,9 +1,9 @@
 extends Button
 
-signal toggle_level_select_menu
+signal toggle_menu
 
 func _ready():
-	connect("toggle_level_select_menu", get_tree().get_root().get_node("Menu"), "_toggle_level_select_menu")
+	connect("toggle_menu", get_tree().get_root().get_node("Menu"), "_toggle_menu")
 
 func _pressed():
-	emit_signal("toggle_level_select_menu")
+	emit_signal("toggle_menu", "res://Menu/LevelSelectMenu.tscn")

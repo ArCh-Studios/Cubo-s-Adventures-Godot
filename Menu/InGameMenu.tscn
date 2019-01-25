@@ -19,7 +19,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 default_font = SubResource( 1 )
 
-[node name="InGameMenu" type="Panel" index="0"]
+[node name="InGameMenu" type="Panel"]
 
 pause_mode = 2
 anchor_left = 0.0
