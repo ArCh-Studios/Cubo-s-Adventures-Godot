@@ -38,7 +38,11 @@ func load_game():
 	save_file.open("user://savegame.save", File.READ)
 	save_data = parse_json(save_file.get_as_text())
 	save_file.close()
-	
+
+func _on_menu_restart():
+	stage.queue_free()
+	queue_load = true
+
 func _on_Scene_restart():
 	stage.queue_free()
 	queue_load = true
