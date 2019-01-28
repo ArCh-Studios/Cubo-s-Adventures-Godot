@@ -16,7 +16,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 default_font = SubResource( 1 )
 
-[node name="LevelSelectMenu" type="Node" index="0"]
+[node name="LevelSelectMenu" type="Node"]
 
 [node name="Container" type="Container" parent="." index="0"]
 
@@ -68,10 +68,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1430.0
-margin_top = 80.0
-margin_right = 1820.0
-margin_bottom = 190.0
+margin_left = 770.0
+margin_top = 90.0
+margin_right = 1160.0
+margin_bottom = 200.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -96,10 +96,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1430.0
-margin_top = 280.0
-margin_right = 1820.0
-margin_bottom = 390.0
+margin_left = 770.0
+margin_top = 290.0
+margin_right = 1160.0
+margin_bottom = 400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -124,10 +124,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1430.0
-margin_top = 480.0
-margin_right = 1820.0
-margin_bottom = 590.0
+margin_left = 770.0
+margin_top = 490.0
+margin_right = 1160.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -152,10 +152,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1430.0
-margin_top = 680.0
-margin_right = 1820.0
-margin_bottom = 790.0
+margin_left = 770.0
+margin_top = 690.0
+margin_right = 1160.0
+margin_bottom = 800.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -180,10 +180,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1430.0
-margin_top = 880.0
-margin_right = 1820.0
-margin_bottom = 990.0
+margin_left = 770.0
+margin_top = 890.0
+margin_right = 1160.0
+margin_bottom = 1000.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -201,5 +201,145 @@ align = 1
 script = ExtResource( 3 )
 _sections_unfolded = [ "Margin" ]
 level = 5
+
+[node name="SelectLevelButton6" type="Button" parent="Container" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1400.0
+margin_top = 90.0
+margin_right = 1790.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Level 6"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Margin" ]
+level = 6
+
+[node name="SelectLevelButton7" type="Button" parent="Container" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1400.0
+margin_top = 290.0
+margin_right = 1790.0
+margin_bottom = 400.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Level 7"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Margin" ]
+level = 7
+
+[node name="SelectLevelButton8" type="Button" parent="Container" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1400.0
+margin_top = 490.0
+margin_right = 1790.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Level 8"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Margin" ]
+level = 8
+
+[node name="SelectLevelButton9" type="Button" parent="Container" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1400.0
+margin_top = 690.0
+margin_right = 1790.0
+margin_bottom = 800.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Level 9"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Margin" ]
+level = 9
+
+[node name="SelectLevelButton10" type="Button" parent="Container" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1400.0
+margin_top = 890.0
+margin_right = 1790.0
+margin_bottom = 1000.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Level 10"
+flat = false
+align = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Margin" ]
+level = 10
 
 

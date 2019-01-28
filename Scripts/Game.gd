@@ -28,10 +28,10 @@ func _restart():
 	queue_load = true
 
 func _on_Cubo_toggle_menu(camera):
-	$InGameMenu.margin_left = camera.x + 700
-	$InGameMenu.margin_right = camera.x + 1220
-	$InGameMenu.margin_top = camera.y + 100
-	$InGameMenu.margin_bottom = camera.y + 1000
+	$InGameMenu.margin_left = camera.x + 0
+	$InGameMenu.margin_right = camera.x + 0
+	$InGameMenu.margin_top = camera.y + 0
+	$InGameMenu.margin_bottom = camera.y + 0
 	$InGameMenu.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true

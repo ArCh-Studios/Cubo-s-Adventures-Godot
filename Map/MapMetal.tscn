@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[node name="MapMetal" type="Node" index="0"]
+[node name="MapMetal" type="Node"]
 
 [node name="01Edge1" type="Sprite" parent="." index="0"]
 
