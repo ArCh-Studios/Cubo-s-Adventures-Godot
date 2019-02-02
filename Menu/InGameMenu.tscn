@@ -19,7 +19,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 default_font = SubResource( 1 )
 
-[node name="InGameMenu" type="Panel"]
+[node name="InGameMenu" type="Panel" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -38,7 +38,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 theme = SubResource( 2 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Anchor", "Margin", "Pause", "Theme" ]
+_sections_unfolded = [ "Margin", "Pause", "Theme" ]
 
 [node name="ResumeButton" type="Button" parent="." index="0"]
 
