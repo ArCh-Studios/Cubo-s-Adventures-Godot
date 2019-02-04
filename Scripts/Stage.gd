@@ -14,9 +14,9 @@ func _physics_process(delta):
 		if ($TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(-16, -32))) == 37 ||
 		$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(16, -32))) == 37):
 			emit_signal("restart")
-	#if $Cubo.is_on_wall():
-	if ($TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(-32, -16))) == 36 ||
-	$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(-32, 16))) == 36 || 
-	$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(32, -16))) == 38 ||
-	$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(32, 16))) == 38):
-		emit_signal("restart")
+	if $Cubo.is_on_wall():
+		if ($TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(-32, -16))) == 36 ||
+		$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(-32, 16))) == 36 || 
+		$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(32, -16))) == 38 ||
+		$TileMap.get_cellv($TileMap.world_to_map($Cubo.position + Vector2(32, 16))) == 38):
+			emit_signal("restart")

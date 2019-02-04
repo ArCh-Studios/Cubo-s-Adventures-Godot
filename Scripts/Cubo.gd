@@ -30,7 +30,8 @@ func _process(delta):
 	else:
 		horizontal_input = 0
 	if (Input.is_key_pressed(KEY_W)):
-		is_jumping = true
+		if (!is_jumping):
+			is_jumping = true
 	else:
 		is_jumping = false
 	if (Input.is_key_pressed(KEY_ESCAPE)):
@@ -49,7 +50,7 @@ func _physics_process(delta):
 		force.y += gravity
 	if is_on_wall() and is_jumping:
 		if force.x > 0:
-			force = Vector2(-jump_power*2/3, -jump_power*3/4)
+			force = Vector2(-jump_power*1/2, -jump_power)
 		else:
 			force = Vector2(jump_power*2/3, -jump_power*3/4)
 	move_and_slide(force * delta, Vector2(0, -1))
