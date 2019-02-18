@@ -18,7 +18,7 @@ font_data = ExtResource( 4 )
 default_font = SubResource( 1 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="Stage1" type="Node"]
+[node name="Stage1" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -66,7 +66,8 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = SubResource( 2 )
 text = "Use A and D to move, and W to jump.
-Run into a wall and hold W to wall jump."
+Run onto a wall press W to wall jump.
+Hold shift and press S on a wall to eject."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

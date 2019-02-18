@@ -10,7 +10,9 @@ export (int) var speed
 export (int) var jump_power
 export (int) var gravity
 var horizontal_input = int(0)
-var is_jumping = bool(false)
+var will_jump = bool(false)
+var is_shift = bool(false)
+var is_fall = bool(false)
 var force = Vector2(0, 0)
 
 func _ready():
@@ -21,36 +23,52 @@ func _ready():
 	$Camera2D.limit_bottom = cam_bottom_lim
 
 func _process(delta):
-	if (Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A)):
+	if Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A):
 		horizontal_input = speed
 		$Sprite.flip_h = false
-	elif (Input.is_key_pressed(KEY_A) and !Input.is_key_pressed(KEY_D)):
+	elif Input.is_key_pressed(KEY_A) and !Input.is_key_pressed(KEY_D):
 		horizontal_input = -speed
 		$Sprite.flip_h = true
 	else:
 		horizontal_input = 0
-	if (Input.is_key_pressed(KEY_W)):
-		if (!is_jumping):
-			is_jumping = true
+	if Input.is_key_pressed(KEY_W):
+		will_jump = true
+		is_shift = false
+	elif Input.is_key_pressed(KEY_S):
+		will_jump = true
+		is_shift = true
 	else:
-		is_jumping = false
-	if (Input.is_key_pressed(KEY_ESCAPE)):
+		will_jump = false
+		is_shift = false
+	if Input.is_key_pressed(KEY_ESCAPE):
 		emit_signal("toggle_menu", $Camera2D.get_camera_screen_center())
 
 func _physics_process(delta):
-	force.x += horizontal_input
+	if not is_fall:
+		force.x += horizontal_input
 	force.x *= .8
 	if is_on_ceiling():
 		force.y = 0
 	if is_on_floor():
 		force.y = 0
-		if is_jumping:
+		is_fall = false
+		if will_jump and not is_shift:
+			will_jump = false
 			force.y = -jump_power
 	else:
 		force.y += gravity
-	if is_on_wall() and is_jumping:
+	if is_on_wall() and will_jump:
+		will_jump = false
 		if force.x > 0:
-			force = Vector2(-jump_power*1/2, -jump_power)
+			if is_shift:
+				force = Vector2(-jump_power*3, -jump_power*1/3)
+				is_fall = true
+			else:
+				force = Vector2(-jump_power*1/3, -jump_power*2/3)
 		else:
-			force = Vector2(jump_power*2/3, -jump_power*3/4)
+			if is_shift:
+				force = Vector2(jump_power*3, -jump_power*1/3)
+				is_fall = true
+			else:
+				force = Vector2(jump_power*1/3, -jump_power*2/3)
 	move_and_slide(force * delta, Vector2(0, -1))
