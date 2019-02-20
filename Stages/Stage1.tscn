@@ -67,7 +67,7 @@ size_flags_vertical = 4
 theme = SubResource( 2 )
 text = "Use A and D to move, and W to jump.
 Run onto a wall press W to wall jump.
-Hold shift and press S on a wall to eject."
+Hold shift and press Space on a wall to eject."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

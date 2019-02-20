@@ -17,6 +17,7 @@ var force = Vector2(0, 0)
 
 func _ready():
 	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
+	connect("restart", get_tree().get_root().get_node("Game"), "_restart")
 	$Camera2D.limit_right = cam_right_lim
 	$Camera2D.limit_left = cam_left_lim
 	$Camera2D.limit_top = cam_top_lim
@@ -33,12 +34,11 @@ func _process(delta):
 		horizontal_input = 0
 	if Input.is_key_pressed(KEY_W):
 		will_jump = true
-		is_shift = false
-	elif Input.is_key_pressed(KEY_S):
-		will_jump = true
-		is_shift = true
 	else:
 		will_jump = false
+	if Input.is_key_pressed(KEY_SPACE):
+		is_shift = true
+	else:
 		is_shift = false
 	if Input.is_key_pressed(KEY_ESCAPE):
 		emit_signal("toggle_menu", $Camera2D.get_camera_screen_center())
@@ -57,18 +57,16 @@ func _physics_process(delta):
 			force.y = -jump_power
 	else:
 		force.y += gravity
-	if is_on_wall() and will_jump:
-		will_jump = false
-		if force.x > 0:
-			if is_shift:
+	if is_on_wall():
+		if is_shift:
+			is_fall = true
+			if force.x > 0:
 				force = Vector2(-jump_power*3, -jump_power*1/3)
-				is_fall = true
 			else:
-				force = Vector2(-jump_power*1/3, -jump_power*2/3)
-		else:
-			if is_shift:
 				force = Vector2(jump_power*3, -jump_power*1/3)
-				is_fall = true
+		elif will_jump:
+			if force.x > 0:
+				force = Vector2(-jump_power*1/3, -jump_power*2/3)
 			else:
 				force = Vector2(jump_power*1/3, -jump_power*2/3)
 	move_and_slide(force * delta, Vector2(0, -1))
