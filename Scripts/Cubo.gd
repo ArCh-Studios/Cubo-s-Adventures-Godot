@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal toggle_menu
+signal restart
 #big chungus
 export (int) var cam_right_lim = 1920
 export (int) var cam_left_lim = 0
@@ -32,14 +33,8 @@ func _process(delta):
 		$Sprite.flip_h = true
 	else:
 		horizontal_input = 0
-	if Input.is_key_pressed(KEY_W):
-		will_jump = true
-	else:
-		will_jump = false
-	if Input.is_key_pressed(KEY_SPACE):
-		is_shift = true
-	else:
-		is_shift = false
+	will_jump = Input.is_key_pressed(KEY_W)
+	is_shift = Input.is_key_pressed(KEY_SPACE)
 	if Input.is_key_pressed(KEY_ESCAPE):
 		emit_signal("toggle_menu", $Camera2D.get_camera_screen_center())
 
@@ -47,9 +42,16 @@ func _physics_process(delta):
 	if not is_fall:
 		force.x += horizontal_input
 	force.x *= .8
+	var map = get_tree().get_root().get_node("Game/Stage/TileMap")
 	if is_on_ceiling():
+		if (map.get_cellv(map.world_to_map(position + Vector2(-16, -32))) == 37 ||
+		map.get_cellv(map.world_to_map(position + Vector2(16, -32))) == 37):
+			emit_signal("restart")
 		force.y = 0
 	if is_on_floor():
+		if (map.get_cellv(map.world_to_map(position + Vector2(-16, 32))) == 35 ||
+		map.get_cellv(map.world_to_map(position + Vector2(16, 32))) == 35):
+			emit_signal("restart")
 		force.y = 0
 		is_fall = false
 		if will_jump and not is_shift:
@@ -57,6 +59,11 @@ func _physics_process(delta):
 			force.y = -jump_power
 	else:
 		force.y += gravity
+	if (map.get_cellv(map.world_to_map(position + Vector2(-20, 16))) == 36 or
+	map.get_cellv(map.world_to_map(position + Vector2(-20, -16))) == 36 or 
+	map.get_cellv(map.world_to_map(position + Vector2(20, 16))) == 38 or
+	map.get_cellv(map.world_to_map(position + Vector2(20, -16))) == 38):
+		emit_signal("restart")
 	if is_on_wall():
 		if is_shift:
 			is_fall = true
