@@ -41,7 +41,7 @@ func _process(delta):
 func _physics_process(delta):
 	if not is_fall:
 		force.x += horizontal_input
-	force.x *= .8
+	force.x *= .6
 	var map = get_tree().get_root().get_node("Game/Stage/TileMap")
 	if is_on_ceiling():
 		if (map.get_cellv(map.world_to_map(position + Vector2(-16, -32))) == 37 ||
@@ -68,12 +68,12 @@ func _physics_process(delta):
 		if is_shift:
 			is_fall = true
 			if force.x > 0:
-				force = Vector2(-jump_power*3, -jump_power*1/3)
+				force = Vector2(-speed*16, -jump_power*1/3)
 			else:
-				force = Vector2(jump_power*3, -jump_power*1/3)
+				force = Vector2(speed*16, -jump_power*1/3)
 		elif will_jump:
 			if force.x > 0:
-				force = Vector2(-jump_power*1/3, -jump_power*2/3)
+				force = Vector2(-speed*8/3, -jump_power*2/3)
 			else:
-				force = Vector2(jump_power*1/3, -jump_power*2/3)
+				force = Vector2(speed*8/3, -jump_power*2/3)
 	move_and_slide(force * delta, Vector2(0, -1))

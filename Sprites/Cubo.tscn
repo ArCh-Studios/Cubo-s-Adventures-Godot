@@ -22,7 +22,7 @@ cam_right_lim = 1920
 cam_left_lim = 0
 cam_top_lim = 0
 cam_bottom_lim = 1080
-speed = 10000
+speed = 27000
 jump_power = 70000
 gravity = 5000
 
