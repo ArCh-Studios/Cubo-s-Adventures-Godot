@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=4]
 
-[node name="Stage6" type="Node" index="0"]
+[node name="Stage6" type="Node"]
 
 script = ExtResource( 1 )
 

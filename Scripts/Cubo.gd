@@ -15,6 +15,7 @@ var will_jump = bool(false)
 var is_shift = bool(false)
 var is_fall = bool(false)
 var force = Vector2(0, 0)
+var map
 
 func _ready():
 	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
@@ -23,6 +24,7 @@ func _ready():
 	$Camera2D.limit_left = cam_left_lim
 	$Camera2D.limit_top = cam_top_lim
 	$Camera2D.limit_bottom = cam_bottom_lim
+	map = get_tree().get_root().get_node("Game/Stage/TileMap")
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A):
@@ -42,7 +44,6 @@ func _physics_process(delta):
 	if not is_fall:
 		force.x += horizontal_input
 	force.x *= .6
-	var map = get_tree().get_root().get_node("Game/Stage/TileMap")
 	if is_on_ceiling():
 		if (map.get_cellv(map.world_to_map(position + Vector2(-16, -32))) == 37 ||
 		map.get_cellv(map.world_to_map(position + Vector2(16, -32))) == 37):
@@ -59,11 +60,6 @@ func _physics_process(delta):
 			force.y = -jump_power
 	else:
 		force.y += gravity
-	if (map.get_cellv(map.world_to_map(position + Vector2(-20, 16))) == 36 or
-	map.get_cellv(map.world_to_map(position + Vector2(-20, -16))) == 36 or 
-	map.get_cellv(map.world_to_map(position + Vector2(20, 16))) == 38 or
-	map.get_cellv(map.world_to_map(position + Vector2(20, -16))) == 38):
-		emit_signal("restart")
 	if is_on_wall():
 		if is_shift:
 			is_fall = true
@@ -77,3 +73,8 @@ func _physics_process(delta):
 			else:
 				force = Vector2(speed*8/3, -jump_power*2/3)
 	move_and_slide(force * delta, Vector2(0, -1))
+	if (map.get_cellv(map.world_to_map(position + Vector2(17, 20))) == 38 or
+	map.get_cellv(map.world_to_map(position + Vector2(-17, 20))) == 36 or
+	map.get_cellv(map.world_to_map(position + Vector2(17, -12))) == 38 or 
+	map.get_cellv(map.world_to_map(position + Vector2(-17, -12))) == 36):
+		emit_signal("restart")
