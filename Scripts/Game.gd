@@ -45,3 +45,7 @@ func _on_Goal_body_entered(body):
 			ProjectSettings.set("max_stage", current_stage)
 		packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 		queue_load = true
+		
+func _on_white_key_body_entered(body):
+	if body.is_in_group("Cubo"):
+		$Stage.WhiteKey.queuefree()

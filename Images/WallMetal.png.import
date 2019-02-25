@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door.png-9739efc2d47d51e842a8bb16f46c0245.stex"
+path="res://.import/WallMetal.png-b11349c5407f152b568f5c7a276a0e79.stex"
 
 [deps]
 
-source_file="res://Sprites/door.png"
-dest_files=[ "res://.import/door.png-9739efc2d47d51e842a8bb16f46c0245.stex" ]
+source_file="res://Images/WallMetal.png"
+dest_files=[ "res://.import/WallMetal.png-b11349c5407f152b568f5c7a276a0e79.stex" ]
 
 [params]
 

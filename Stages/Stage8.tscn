@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Cubo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Map/MapMetal.res" type="TileSet" id=3]
+
 
 [node name="Stage8" type="Node" index="0"]
 

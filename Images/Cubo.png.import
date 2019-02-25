@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Spike.png-046af0c66605fb679259fbe3b574222f.stex"
+path="res://.import/Cubo.png-0fe0b294935582a7ee2bb579f8f6bab1.stex"
 
 [deps]
 
-source_file="res://Map/Spike.png"
-dest_files=[ "res://.import/Spike.png-046af0c66605fb679259fbe3b574222f.stex" ]
+source_file="res://Images/Cubo.png"
+dest_files=[ "res://.import/Cubo.png-0fe0b294935582a7ee2bb579f8f6bab1.stex" ]
 
 [params]
 

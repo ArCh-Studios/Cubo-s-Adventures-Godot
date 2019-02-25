@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
 [ext_resource path="res://Map/MapMetal.res" type="TileSet" id=2]
-[ext_resource path="res://Sprites/Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Cubo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Cubo.tscn" type="PackedScene" id=4]
+
 
 [node name="Stage3" type="Node"]
 

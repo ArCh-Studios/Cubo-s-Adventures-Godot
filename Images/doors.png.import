@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cubo.png-eccaebdccd53bba1c16c81f83d7929b0.stex"
+path="res://.import/doors.png-da5183f88db4b62b0eb1509269a532b1.stex"
 
 [deps]
 
-source_file="res://Sprites/Cubo.png"
-dest_files=[ "res://.import/Cubo.png-eccaebdccd53bba1c16c81f83d7929b0.stex" ]
+source_file="res://Images/doors.png"
+dest_files=[ "res://.import/doors.png-da5183f88db4b62b0eb1509269a532b1.stex" ]
 
 [params]
 

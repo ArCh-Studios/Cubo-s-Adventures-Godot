@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WallMetal.png-177de5351597e87a57e7153f2ff9ecea.stex"
+path="res://.import/Keys.png-fdf0ca6546bddbe8e6a9f729f105c633.stex"
 
 [deps]
 
-source_file="res://Map/WallMetal.png"
-dest_files=[ "res://.import/WallMetal.png-177de5351597e87a57e7153f2ff9ecea.stex" ]
+source_file="res://Images/Keys.png"
+dest_files=[ "res://.import/Keys.png-fdf0ca6546bddbe8e6a9f729f105c633.stex" ]
 
 [params]
 
