@@ -45,14 +45,8 @@ func _physics_process(delta):
 		force.x += horizontal_input
 	force.x *= .6
 	if is_on_ceiling():
-		if (map.get_cellv(map.world_to_map(position + Vector2(-16, -32))) == 37 ||
-		map.get_cellv(map.world_to_map(position + Vector2(16, -32))) == 37):
-			emit_signal("restart")
 		force.y = 0
 	if is_on_floor():
-		if (map.get_cellv(map.world_to_map(position + Vector2(-16, 32))) == 35 ||
-		map.get_cellv(map.world_to_map(position + Vector2(16, 32))) == 35):
-			emit_signal("restart")
 		force.y = 0
 		is_fall = false
 		if will_jump and not is_shift:
@@ -76,5 +70,9 @@ func _physics_process(delta):
 	if (map.get_cellv(map.world_to_map(position + Vector2(17, 20))) == 38 or
 	map.get_cellv(map.world_to_map(position + Vector2(-17, 20))) == 36 or
 	map.get_cellv(map.world_to_map(position + Vector2(17, -12))) == 38 or 
-	map.get_cellv(map.world_to_map(position + Vector2(-17, -12))) == 36):
+	map.get_cellv(map.world_to_map(position + Vector2(-17, -12))) == 36 or
+	map.get_cellv(map.world_to_map(position + Vector2(-16, -13))) == 37 or
+	map.get_cellv(map.world_to_map(position + Vector2(16, -13))) == 37 or
+	map.get_cellv(map.world_to_map(position + Vector2(-16, 21))) == 35 or
+	map.get_cellv(map.world_to_map(position + Vector2(16, 21))) == 35):
 		emit_signal("restart")
