@@ -11,6 +11,9 @@ script = ExtResource( 1 )
 [node name="Cubo" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 116, 122 )
+cam_right_lim = 3840
+cam_top_lim = -4
+cam_bottom_lim = 2172
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 

@@ -3,7 +3,9 @@
 [ext_resource path="res://Images/doors.png" type="Texture" id=1]
 [ext_resource path="res://Objects/KeyDoors/GreenLock.tscn" type="PackedScene" id=2]
 
-[node name="GreenDoor" type="Sprite" index="0"]
+[node name="GreenDoor" type="Sprite" index="0" groups=[
+"GreenDoor",
+]]
 
 texture = ExtResource( 1 )
 region_enabled = true

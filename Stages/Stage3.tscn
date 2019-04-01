@@ -5,8 +5,7 @@
 [ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Cubo.tscn" type="PackedScene" id=4]
 
-
-[node name="Stage3" type="Node"]
+[node name="Stage3" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -40,5 +39,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Cubo" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 110, 1030 )
+cam_top_lim = -4
+cam_bottom_lim = 1084
 
 
