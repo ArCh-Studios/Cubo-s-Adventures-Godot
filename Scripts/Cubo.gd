@@ -18,7 +18,9 @@ var force = Vector2(0, 0)
 var map
 
 func _ready():
+#warning-ignore:return_value_discarded
 	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
+#warning-ignore:return_value_discarded
 	connect("restart", get_tree().get_root().get_node("Game"), "_restart")
 	$Camera2D.limit_right = cam_right_lim
 	$Camera2D.limit_left = cam_left_lim
@@ -26,6 +28,7 @@ func _ready():
 	$Camera2D.limit_bottom = cam_bottom_lim
 	map = get_tree().get_root().get_node("Game/Stage/TileMap")
 
+#warning-ignore:unused_argument
 func _process(delta):
 	if Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A):
 		horizontal_input = speed
@@ -66,13 +69,14 @@ func _physics_process(delta):
 				force = Vector2(-speed*8/3, -jump_power*2/3)
 			else:
 				force = Vector2(speed*8/3, -jump_power*2/3)
+#warning-ignore:return_value_discarded
 	move_and_slide(force * delta, Vector2(0, -1))
-	if (map.get_cellv(map.world_to_map(position + Vector2(17, 20))) == 38 or
-	map.get_cellv(map.world_to_map(position + Vector2(-17, 20))) == 36 or
-	map.get_cellv(map.world_to_map(position + Vector2(17, -12))) == 38 or 
-	map.get_cellv(map.world_to_map(position + Vector2(-17, -12))) == 36 or
-	map.get_cellv(map.world_to_map(position + Vector2(-16, -13))) == 37 or
-	map.get_cellv(map.world_to_map(position + Vector2(16, -13))) == 37 or
-	map.get_cellv(map.world_to_map(position + Vector2(-16, 21))) == 35 or
-	map.get_cellv(map.world_to_map(position + Vector2(16, 21))) == 35):
+	if (map.get_cellv(map.world_to_map(position + Vector2(17, 16))) == 38 or
+	map.get_cellv(map.world_to_map(position + Vector2(-17, 16))) == 36 or
+	map.get_cellv(map.world_to_map(position + Vector2(17, -16))) == 38 or 
+	map.get_cellv(map.world_to_map(position + Vector2(-17, -16))) == 36 or
+	map.get_cellv(map.world_to_map(position + Vector2(-16, -17))) == 37 or
+	map.get_cellv(map.world_to_map(position + Vector2(16, -17))) == 37 or
+	map.get_cellv(map.world_to_map(position + Vector2(-16, 17))) == 35 or
+	map.get_cellv(map.world_to_map(position + Vector2(16, 17))) == 35):
 		emit_signal("restart")
