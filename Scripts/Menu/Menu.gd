@@ -20,6 +20,16 @@ func check_game():
 	else:
 		ProjectSettings.set("new_game", false)
 	save_file.close()
+	
+func new_save():
+	var save_data = {
+		"max_stage" : 1
+	}
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	save_game.store_line(to_json(save_data))
+	save_game.close()
+	get_tree().quit()
 
 func load_game():
 	var save_data
@@ -32,6 +42,7 @@ func load_game():
 	ProjectSettings.set("max_stage", save_data["max_stage"])
 	ProjectSettings.set("current_stage", save_data["max_stage"])
 
+#warning-ignore:unused_argument
 func _process(delta):
 	if queue_load:
 		queue_load = false
