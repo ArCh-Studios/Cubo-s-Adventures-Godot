@@ -32,7 +32,8 @@ margin_top = 64.0
 margin_right = 399.0
 margin_bottom = 78.0
 theme = SubResource( 2 )
-text = "Remember, press space while wall jumping to eject!"
+text = "Remember, press space while wall jumping to eject.
+"
 
 [node name="Cubo" parent="." instance=ExtResource( 5 )]
 position = Vector2( 120, 1030 )

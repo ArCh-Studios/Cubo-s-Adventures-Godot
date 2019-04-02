@@ -57,7 +57,7 @@ func _physics_process(delta):
 			force.y = -jump_power
 	else:
 		force.y += gravity
-	if is_on_wall():
+	if not is_fall and is_on_wall():
 		if is_shift:
 			is_fall = true
 			if force.x > 0:

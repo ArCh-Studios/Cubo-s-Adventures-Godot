@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Map/MapMetal.res" type="TileSet" id=1]
+[ext_resource path="res://Objects/Cubo.tscn" type="PackedScene" id=2]
+
+[node name="Stage8" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+
+[node name="Cubo" parent="." instance=ExtResource( 2 )]
+position = Vector2( 224, 896 )
+
