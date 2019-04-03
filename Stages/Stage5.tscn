@@ -22,5 +22,5 @@ tile_data = PoolIntArray( 0, 6, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 position = Vector2( 1632, 768 )
 
 [node name="Cubo" parent="." instance=ExtResource( 4 )]
-position = Vector2( 140, 1030 )
+position = Vector2( 112, 1040 )
 

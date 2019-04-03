@@ -35,5 +35,5 @@ theme = SubResource( 2 )
 text = "Watch out for spikes!"
 
 [node name="Cubo" parent="." instance=ExtResource( 5 )]
-position = Vector2( 176, 880 )
+position = Vector2( 224, 880 )
 

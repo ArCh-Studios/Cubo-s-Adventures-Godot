@@ -27,6 +27,6 @@ position = Vector2( 1504, 879 )
 position = Vector2( 1504, 288 )
 
 [node name="Cubo" parent="." instance=ExtResource( 6 )]
-position = Vector2( 192, 448 )
+position = Vector2( 256, 496 )
 cam_right_lim = 3520
 
