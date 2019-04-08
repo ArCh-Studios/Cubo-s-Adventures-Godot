@@ -6,6 +6,7 @@ var stage
 var queue_load
 
 func _ready():
+	ProjectSettings.set("checkpoint", 0)
 	queue_load = false
 	current_stage = ProjectSettings.get("current_stage")
 	packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
