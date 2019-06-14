@@ -7,4 +7,3 @@ func _ready():
 
 func pressed():
 	emit_signal("load_game")
-	get_tree().change_scene("res://Stages/Game.tscn")
