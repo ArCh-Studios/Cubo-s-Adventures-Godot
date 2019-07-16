@@ -5,8 +5,9 @@ signal restart
 func _ready():
 #warning-ignore:return_value_discarded
 	connect("restart", get_tree().get_root().get_node("Game"), "_restart")
-	if ProjectSettings.get("checkpoint") != 0:
-		$Cubo.position = $Checkpoints.get_child(ProjectSettings.get("checkpoint"))
+	if ProjectSettings.get("checkpoint") != -1:
+		$Cubo.position = $Checkpoints.get_child(ProjectSettings.get("checkpoint")).position + Vector2(0, 16)
+		$Checkpoints.get_child(ProjectSettings.get("checkpoint")).flag()
 
 #warning-ignore:unused_argument
 func _physics_process(delta):

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 signal toggle_menu
-#big chungus
+
 export (int) var cam_right_lim = 1920
 export (int) var cam_left_lim = 0
 export (int) var cam_top_lim = 0
