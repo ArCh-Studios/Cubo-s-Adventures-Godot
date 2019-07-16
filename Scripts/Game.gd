@@ -10,6 +10,10 @@ func _enter_tree():
 
 func default():
 	ProjectSettings.set("checkpoint", -1)
+	ProjectSettings.set("wkeyr", false)
+	ProjectSettings.set("rkeyr", false)
+	ProjectSettings.set("gkeyr", false)
+	ProjectSettings.set("bkeyr", false)
 	ProjectSettings.set("wkey", false)
 	ProjectSettings.set("rkey", false)
 	ProjectSettings.set("gkey", false)
@@ -35,6 +39,10 @@ func _process(delta):
 		move_child(stage, 0)
 
 func _restart():
+	ProjectSettings.set("wkeyr", false)
+	ProjectSettings.set("rkeyr", false)
+	ProjectSettings.set("gkeyr", false)
+	ProjectSettings.set("bkeyr", false)
 	stage.queue_free()
 	queue_load = true
 

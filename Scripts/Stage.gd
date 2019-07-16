@@ -36,7 +36,7 @@ func _on_wkey_body_entered(body):
 		var doors = get_tree().get_nodes_in_group("WhiteDoor")
 		for door in doors:
 			door.get_child(0).queue_free()
-		ProjectSettings.set("wkey", true)
+		ProjectSettings.set("wkeyr", true)
 
 func _on_rkey_body_entered(body):
 	if body.is_in_group("Cubo"):
@@ -44,7 +44,7 @@ func _on_rkey_body_entered(body):
 		var doors = get_tree().get_nodes_in_group("RedDoor")
 		for door in doors:
 			door.get_child(0).queue_free()
-		ProjectSettings.set("rkey", true)
+		ProjectSettings.set("rkeyr", true)
 
 func _on_gkey_body_entered(body):
 	if body.is_in_group("Cubo"):
@@ -52,7 +52,7 @@ func _on_gkey_body_entered(body):
 		var doors = get_tree().get_nodes_in_group("GreenDoor")
 		for door in doors:
 			door.get_child(0).queue_free()
-		ProjectSettings.set("gkey", true)
+		ProjectSettings.set("gkeyr", true)
 
 func _on_bkey_body_entered(body):
 	if body.is_in_group("Cubo"):
@@ -60,4 +60,4 @@ func _on_bkey_body_entered(body):
 		var doors = get_tree().get_nodes_in_group("BlueDoor")
 		for door in doors:
 			door.get_child(0).queue_free()
-		ProjectSettings.set("bkey", true)
+		ProjectSettings.set("bkeyr", true)
