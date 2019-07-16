@@ -46,3 +46,4 @@ func _on_Goal_body_entered(body):
 			ProjectSettings.set("max_stage", current_stage)
 		packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 		queue_load = true
+		ProjectSettings.set("checkpoint", -1)
