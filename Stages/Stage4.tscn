@@ -37,4 +37,6 @@ text = "Remember, press space while wall jumping to eject.
 
 [node name="Cubo" parent="." instance=ExtResource( 5 )]
 position = Vector2( 144, 1040 )
+cam_top_lim = 0
+cam_bottom_lim = 1080
 

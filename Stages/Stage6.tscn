@@ -45,4 +45,6 @@ text = "Get the Key to open the door."
 
 [node name="Cubo" parent="." instance=ExtResource( 7 )]
 position = Vector2( 192, 816 )
+cam_top_lim = 0
+cam_bottom_lim = 1080
 

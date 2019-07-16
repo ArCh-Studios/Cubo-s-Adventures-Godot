@@ -36,4 +36,6 @@ text = "Watch out for spikes!"
 
 [node name="Cubo" parent="." instance=ExtResource( 5 )]
 position = Vector2( 224, 880 )
+cam_top_lim = 0
+cam_bottom_lim = 1080
 

@@ -38,4 +38,6 @@ Press Space on a wall to eject."
 
 [node name="Cubo" parent="." instance=ExtResource( 5 )]
 position = Vector2( 160, 1040 )
+cam_top_lim = 0
+cam_bottom_lim = 1080
 

@@ -10,8 +10,6 @@ extents = Vector2( 16, 16 )
 "Cubo",
 ]]
 script = ExtResource( 1 )
-cam_top_lim = 4
-cam_bottom_lim = 1084
 speed = 27000
 jump_power = 70000
 gravity = 5000
@@ -28,6 +26,5 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
-limit_smoothed = true
 editor_draw_limits = true
 

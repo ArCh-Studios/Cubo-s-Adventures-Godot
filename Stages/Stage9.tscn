@@ -18,6 +18,8 @@ tile_data = PoolIntArray( 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 
 
 [node name="Cubo" parent="." instance=ExtResource( 3 )]
 position = Vector2( 70.6426, 1039.03 )
+cam_top_lim = 0
+cam_bottom_lim = 1080
 
 [node name="WhiteDoor" parent="." instance=ExtResource( 4 )]
 position = Vector2( 192.007, 1024 )
