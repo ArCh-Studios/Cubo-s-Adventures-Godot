@@ -5,8 +5,18 @@ var packed_stage
 var stage
 var queue_load
 
-func _ready():
+func _enter_tree():
+	default()
+
+func default():
 	ProjectSettings.set("checkpoint", -1)
+	ProjectSettings.set("wkey", false)
+	ProjectSettings.set("rkey", false)
+	ProjectSettings.set("gkey", false)
+	ProjectSettings.set("bkey", false)
+	
+
+func _ready():
 	queue_load = false
 	current_stage = ProjectSettings.get("current_stage")
 	packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
@@ -46,4 +56,4 @@ func _on_Goal_body_entered(body):
 			ProjectSettings.set("max_stage", current_stage)
 		packed_stage = load("res://Stages/Stage" + str(current_stage) + ".tscn")
 		queue_load = true
-		ProjectSettings.set("checkpoint", -1)
+		default()

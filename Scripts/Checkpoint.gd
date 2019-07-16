@@ -15,4 +15,4 @@ func reset():
 	$Sprite.region_rect = Rect2(0, 0, 64, 64)
 
 func flag():
-	$Sprite.region_rect = Rect2(0, 64, 64, 64)
+	$Sprite.region_rect = Rect2(0, 65, 64, 64)
