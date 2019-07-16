@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Stage.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Checkpoint.tscn" type="PackedScene" id=2]
@@ -6,7 +6,15 @@
 [ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/KeyDoors/WhiteKey.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/KeyDoors/WhiteDoor.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Cubo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Fonts/FORCED SQUARE.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Objects/Cubo.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 7 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="Stage8" type="Node"]
 script = ExtResource( 1 )
@@ -33,11 +41,14 @@ position = Vector2( 1680, 399 )
 position = Vector2( 1568, 992 )
 
 [node name="Label" type="Label" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Checkpoints Save Your Progress"
+margin_left = 528.0
+margin_top = 256.0
+margin_right = 1839.0
+margin_bottom = 339.0
+theme = SubResource( 2 )
+text = "Checkpoints Save Your Progress
+Checkpoints Can Be Triggered Even If There It Has A Flag"
 
-[node name="Cubo" parent="." instance=ExtResource( 7 )]
+[node name="Cubo" parent="." instance=ExtResource( 8 )]
 position = Vector2( 144, 1008 )
 
