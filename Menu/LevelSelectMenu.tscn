@@ -5,341 +5,114 @@
 [ext_resource path="res://Scripts/Menu/GoToLevel.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 50
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Theme" id=2]
-
 default_font = SubResource( 1 )
 
 [node name="LevelSelectMenu" type="Node"]
 
-[node name="Container" type="Container" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Container" type="Control" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 theme = SubResource( 2 )
-_sections_unfolded = [ "Anchor", "Margin", "Theme" ]
 
-[node name="MainMenuButton" type="Button" parent="Container" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MainMenuButton" type="Button" parent="Container"]
 margin_left = 100.0
 margin_top = 880.0
 margin_right = 490.0
 margin_bottom = 990.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Main Menu"
-flat = false
-align = 1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Margin" ]
 
-[node name="SelectLevelButton1" type="Button" parent="Container" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton1" type="Button" parent="Container"]
 margin_left = 770.0
 margin_top = 90.0
 margin_right = 1160.0
 margin_bottom = 200.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 1"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 1
 
-[node name="SelectLevelButton2" type="Button" parent="Container" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton2" type="Button" parent="Container"]
 margin_left = 770.0
 margin_top = 290.0
 margin_right = 1160.0
 margin_bottom = 400.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 2"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 2
 
-[node name="SelectLevelButton3" type="Button" parent="Container" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton3" type="Button" parent="Container"]
 margin_left = 770.0
 margin_top = 490.0
 margin_right = 1160.0
 margin_bottom = 600.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 3"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 3
 
-[node name="SelectLevelButton4" type="Button" parent="Container" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton4" type="Button" parent="Container"]
 margin_left = 770.0
 margin_top = 690.0
 margin_right = 1160.0
 margin_bottom = 800.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 4"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 4
 
-[node name="SelectLevelButton5" type="Button" parent="Container" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton5" type="Button" parent="Container"]
 margin_left = 770.0
 margin_top = 890.0
 margin_right = 1160.0
 margin_bottom = 1000.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 5"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 5
 
-[node name="SelectLevelButton6" type="Button" parent="Container" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton6" type="Button" parent="Container"]
 margin_left = 1400.0
 margin_top = 90.0
 margin_right = 1790.0
 margin_bottom = 200.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 6"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 6
 
-[node name="SelectLevelButton7" type="Button" parent="Container" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton7" type="Button" parent="Container"]
 margin_left = 1400.0
 margin_top = 290.0
 margin_right = 1790.0
 margin_bottom = 400.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 7"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 7
 
-[node name="SelectLevelButton8" type="Button" parent="Container" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton8" type="Button" parent="Container"]
 margin_left = 1400.0
 margin_top = 490.0
 margin_right = 1790.0
 margin_bottom = 600.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 8"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 8
 
-[node name="SelectLevelButton9" type="Button" parent="Container" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton9" type="Button" parent="Container"]
 margin_left = 1400.0
 margin_top = 690.0
 margin_right = 1790.0
 margin_bottom = 800.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 9"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 9
 
-[node name="SelectLevelButton10" type="Button" parent="Container" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SelectLevelButton10" type="Button" parent="Container"]
 margin_left = 1400.0
 margin_top = 890.0
 margin_right = 1790.0
 margin_bottom = 1000.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Level 10"
-flat = false
-align = 1
 script = ExtResource( 3 )
-_sections_unfolded = [ "Margin" ]
 level = 10
-
 
