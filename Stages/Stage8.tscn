@@ -46,8 +46,7 @@ margin_top = 256.0
 margin_right = 1839.0
 margin_bottom = 339.0
 theme = SubResource( 2 )
-text = "Checkpoints Save Your Progress
-Checkpoints Can Be Triggered Even If There It Has A Flag"
+text = "Checkpoints Save Your Progress"
 
 [node name="Cubo" parent="." instance=ExtResource( 8 )]
 position = Vector2( 144, 1008 )
