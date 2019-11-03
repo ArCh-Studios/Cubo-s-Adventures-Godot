@@ -4,6 +4,7 @@ var current_stage
 var packed_stage
 var stage
 var queue_load
+var camera
 
 func _enter_tree():
 	default()
@@ -30,6 +31,7 @@ func _ready():
 	move_child(stage, 0)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
+#warning-ignore:unused_argument
 func _process(delta):
 	if queue_load:
 		queue_load = false
@@ -45,15 +47,6 @@ func _restart():
 	ProjectSettings.set("bkeyr", false)
 	stage.queue_free()
 	queue_load = true
-
-func _on_Cubo_toggle_menu(camera):
-	$InGameMenu.margin_left = camera.x + -260
-	$InGameMenu.margin_right = camera.x + 260
-	$InGameMenu.margin_top = camera.y + -450
-	$InGameMenu.margin_bottom = camera.y + 450
-	$InGameMenu.show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().paused = true
 
 func _on_Goal_body_entered(body):
 	if body.is_in_group("Cubo"):

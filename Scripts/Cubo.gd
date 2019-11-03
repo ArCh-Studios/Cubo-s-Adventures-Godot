@@ -17,26 +17,23 @@ var force = Vector2(0, 0)
 
 func _ready():
 #warning-ignore:return_value_discarded
-	connect("toggle_menu", get_tree().get_root().get_node("Game"), "_on_Cubo_toggle_menu")
-	$Camera2D.limit_right = cam_right_lim
-	$Camera2D.limit_left = cam_left_lim
-	$Camera2D.limit_top = cam_top_lim
-	$Camera2D.limit_bottom = cam_bottom_lim
+	$Cam.limit_right = cam_right_lim
+	$Cam.limit_left = cam_left_lim
+	$Cam.limit_top = cam_top_lim
+	$Cam.limit_bottom = cam_bottom_lim
 
 #warning-ignore:unused_argument
 func _process(delta):
-	if Input.is_key_pressed(KEY_D) and !Input.is_key_pressed(KEY_A):
+	if Input.is_action_pressed("cubo_right") and !Input.is_action_pressed("cubo_left"):
 		horizontal_input = speed
 		$Sprite.flip_h = false
-	elif Input.is_key_pressed(KEY_A) and !Input.is_key_pressed(KEY_D):
+	elif Input.is_action_pressed("cubo_left") and !Input.is_action_pressed("cubo_right"):
 		horizontal_input = -speed
 		$Sprite.flip_h = true
 	else:
 		horizontal_input = 0
-	will_jump = Input.is_key_pressed(KEY_W)
-	is_shift = Input.is_key_pressed(KEY_SPACE)
-	if Input.is_key_pressed(KEY_ESCAPE):
-		emit_signal("toggle_menu", $Camera2D.get_camera_screen_center())
+	will_jump = Input.is_action_pressed("cubo_jump")
+	is_shift = Input.is_action_pressed("cubo_eject")
 
 func _physics_process(delta):
 	if not is_fall:
